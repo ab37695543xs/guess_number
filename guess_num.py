@@ -106,14 +106,14 @@ def main():
         if(chosen == "n"):
             break
         elif(chosen == "y"):
-            # 不重複第一個開始
+            # 建立答案庫
             database = build_database()
             turn = 1
-            print(len(database))
-            # while(len(database) > 1):
-            #     database = filter(database, turn)
-            #     turn = turn + 1
-            #     print(database)
+            # 直到剩最後一個可能
+            while(len(database) > 1):
+                database = filter(database, turn)
+                turn = turn + 1
+                print(database)
         print("======")
 
 if __name__ == "__main__":
